@@ -12,36 +12,33 @@ categories = ["api-bindings", "network-programming"]
 documentation = "https://docs.rs/polyfill-rs"
 homepage = "https://github.com/floor-licker/polyfill-rs"
 [dependencies]
-# Pin base64ct to avoid Edition 2024 requirement
-base64ct = "=1.6.0"
 # Async runtime and futures
-tokio = { version = "1.41", features = ["full"] }
+tokio = { version = "1.49", features = ["full"] }
 futures = "0.3"
-futures-util = "0.3"
 
 # HTTP client
-reqwest = { version = "0.12", features = ["json", "stream", "gzip"] }
-hickory-resolver = "0.24"
+reqwest = { version = "0.13", features = ["json", "stream", "gzip"] }
+hickory-resolver = "0.25"
 
 # Serialization
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-simd-json = "0.13"
+simd-json = "0.17"
 dotenvy = "0.15"
 
 # Ethereum and crypto
-alloy-primitives = "0.8.26"
-alloy-sol-types = { version = "0.8.26", features = ["eip712-serde", "json"] }
-alloy-signer = { version = "0.7", features = ["eip712"] }
-alloy-signer-local = { version = "0.7", features = ["eip712"] }
+alloy-primitives = "1.5.4"
+alloy-sol-types = { version = "1.5.4", features = ["eip712-serde", "json"] }
+alloy-signer = { version = "1.6", features = ["eip712"] }
+alloy-signer-local = { version = "1.6", features = ["eip712"] }
 
 # Numeric types
-rust_decimal = { version = "1.36", features = ["serde-with-str"] }
-rust_decimal_macros = "1.36"
+rust_decimal = { version = "1.40", features = ["serde-with-str"] }
+rust_decimal_macros = "1.40"
 
 # Error handling
 anyhow = "1.0"
-thiserror = "1.0"
+thiserror = "2.0"
 
 # Crypto and encoding
 base64 = "0.22"
@@ -56,20 +53,20 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 chrono = { version = "0.4", features = ["serde"] }
 
 # Utilities
-uuid = { version = "1.0", features = ["v4", "serde"] }
+uuid = { version = "1.20", features = ["v4", "serde"] }
 url = "2.5"
-bytes = "1.11.1"
-rand = "0.8"
+rand = "0.9"
 
 # Optional WebSocket support for streaming
-tokio-tungstenite = { version = "0.21", optional = true, features = ["native-tls"] }
+tokio-tungstenite = { version = "0.28", optional = true, features = ["native-tls"] }
+sonic-rs = "0.5.6"
 
 [dev-dependencies]
-criterion = { version = "0.5", features = ["html_reports"] }
+criterion = { version = "0.8", features = ["html_reports"] }
 tokio-test = "0.4"
-mockito = "1.0"
-proptest = "1.0"
-env_logger = "0.10"
+mockito = "1.7"
+proptest = "1.10"
+env_logger = "0.11"
 polymarket-rs-client = "0.1.1"
 
 [features]
